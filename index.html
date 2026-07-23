@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SAZÓN Base Oriental: ingredientes para cocina profesional, restaurantes y negocios de comida oriental.">
+  <title>SAZÓN Base Oriental</title>
+  <style>
+    :root {
+      --bg:#090909;
+      --panel:#111;
+      --panel2:#171717;
+      --gold:#d7b25a;
+      --gold2:#f0d083;
+      --text:#f7f4ed;
+      --muted:#b9b2a6;
+      --line:rgba(215,178,90,.26);
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max),calc(100% - 32px));margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(9,9,9,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;text-decoration:none;height:54px}
+    .official-logo{height:52px;width:auto;max-width:310px;object-fit:contain;object-position:left center}.nav-links{display:flex;gap:22px;align-items:center}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:14px}
+    .nav-links a:hover{color:var(--gold2)}
+    .wa-btn,.gold-btn{background:var(--gold);color:#101010;text-decoration:none;font-weight:800;padding:12px 17px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+    .ghost-btn{border:1px solid var(--line);padding:12px 17px;border-radius:999px;text-decoration:none;color:var(--text)}
+    .hero{min-height:80vh;display:grid;align-items:center;border-bottom:1px solid var(--line);overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:52px;padding:54px 0}
+    .hero-logo{width:min(390px,80%);margin-bottom:22px;border-radius:8px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.22em;font-size:12px;font-weight:700}
+    h1,h2,h3{font-family:Georgia,serif}
+    h1{font-size:clamp(46px,7vw,88px);line-height:.94;margin:16px 0 18px;font-weight:500}
+    .hero p{color:var(--muted);font-size:18px;line-height:1.65;max-width:620px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .hero-visual{position:relative}
+    .hero-visual img{border-radius:26px;box-shadow:0 30px 80px rgba(0,0,0,.55);border:1px solid var(--line)}
+    .hero-note{position:absolute;right:-18px;bottom:28px;background:rgba(9,9,9,.94);border:1px solid var(--gold);border-radius:16px;padding:16px 18px;max-width:230px}
+    .hero-note strong{color:var(--gold2)}
+    section{padding:82px 0}
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:30px}
+    .section-head h2{font-size:clamp(34px,5vw,56px);font-weight:500;margin:8px 0 0}
+    .section-head p{max-width:520px;color:var(--muted);line-height:1.6}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .product-card{background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:.22s ease}
+    .product-card:hover{transform:translateY(-4px);border-color:rgba(215,178,90,.5)}
+    .hero-product{grid-column:span 2}
+    .product-image{border:0;padding:0;width:100%;background:#000;cursor:pointer;aspect-ratio:4/3;overflow:hidden}
+    .product-image img{width:100%;height:100%;object-fit:cover;object-position:top}
+    .product-meta{padding:18px}
+    .category{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.16em}
+    .star{margin-left:8px;color:#101010;background:var(--gold);border-radius:999px;padding:5px 9px;font-size:10px;font-weight:800;text-transform:uppercase}
+    .product-meta h3{font-size:24px;margin:10px 0 12px}
+    .mini-link{font-size:13px;color:var(--gold2);text-decoration:none}
+    .about{background:linear-gradient(180deg,#0d0d0d,#090909);border-block:1px solid var(--line)}
+    .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center}
+    .about img{border-radius:24px;border:1px solid var(--line)}
+    .points{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+    .point{background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:18px}
+    .point strong{display:block;color:var(--gold2);margin-bottom:6px}
+    .point span{color:var(--muted);font-size:14px;line-height:1.5}
+    .cta{text-align:center}
+    .cta-box{border:1px solid var(--gold);border-radius:28px;padding:54px 24px;background:radial-gradient(circle at top,rgba(215,178,90,.12),transparent 48%),var(--panel)}
+    .cta-box h2{font-size:clamp(34px,5vw,54px);margin:0 0 12px}
+    .cta-box p{color:var(--muted);max-width:640px;margin:0 auto 24px;line-height:1.6}
+    footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:13px}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:30;background:#20c15a;color:#07130b;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;text-decoration:none;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+    dialog{border:1px solid var(--line);background:#080808;border-radius:18px;padding:10px;max-width:min(760px,94vw);color:#fff}
+    dialog::backdrop{background:rgba(0,0,0,.85)}
+    dialog img{max-height:82vh;border-radius:12px;margin:auto}
+    .dialog-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 6px 12px}
+    .dialog-bar button{background:none;border:1px solid var(--line);color:#fff;border-radius:999px;padding:7px 10px;cursor:pointer}
+    @media(max-width:900px){
+      .nav-links a:not(.wa-btn){display:none}
+      .hero-grid,.about-grid{grid-template-columns:1fr}
+      .hero{min-height:auto}
+      .hero-visual{order:-1}
+      .hero-note{right:12px}
+      .products{grid-template-columns:1fr 1fr}
+      .hero-product{grid-column:span 2}
+    }
+    @media(max-width:620px){
+      .wrap{width:min(100% - 22px,var(--max))}
+      nav{height:64px}
+      .nav-links .wa-btn{padding:10px 13px;font-size:12px}
+      .hero-grid{padding:28px 0 44px;gap:28px}
+      h1{font-size:52px}
+      .hero p{font-size:16px}
+      section{padding:58px 0}
+      .section-head{display:block}
+      .products{grid-template-columns:1fr}
+      .hero-product{grid-column:auto}
+      .points{grid-template-columns:1fr}
+      .footer-row{display:block}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#inicio" aria-label="SAZÓN Base Oriental"><img class="official-logo" src="assets/logo-horizontal-oficial.jpg" alt="SAZÓN Base Oriental — Ingredientes que dan vida a tu cocina"></a>
+      <div class="nav-links">
+        <a href="#productos">Productos</a>
+        <a href="#marca">Nuestra marca</a>
+        <a href="#catalogo">Catálogo</a>
+        <a class="wa-btn" href="https://wa.me/50246403995" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <img class="hero-logo" src="assets/logo-principal-oficial.jpg" alt="Logo oficial de SAZÓN Base Oriental"><div class="eyebrow">Ingredientes para cocina profesional</div>
+        <h1>Sabor oriental.<br>Resultado profesional.</h1>
+        <p>SAZÓN Base Oriental ofrece una línea pensada para restaurantes y negocios de comida que buscan consistencia, rendimiento y sabor en cada preparación.</p>
+        <div class="hero-actions">
+          <a class="gold-btn" href="#productos">Ver productos</a>
+          <a class="ghost-btn" href="catalogo-sazon.pdf" target="_blank">Descargar catálogo PDF</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/cover.png" alt="Catálogo de SAZÓN Base Oriental">
+        <div class="hero-note"><strong>Producto estrella:</strong><br>Sazonador Chino, protagonista de nuestra línea.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="productos">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">Nuestra línea</div><h2>12 productos para tu cocina</h2></div>
+        <p>Explora cada ficha comercial. Toca una imagen para verla completa y consulta directamente por WhatsApp.</p>
+      </div>
+      <div class="products">
+        
+      <article class="product-card hero-product">
+        <button class="product-image" type="button" data-image="assets/sazonador-chino.png" data-name="Sazonador Chino" aria-label="Ver ficha de Sazonador Chino">
+          <img src="assets/sazonador-chino.png" alt="Ficha comercial de Sazonador Chino" loading="lazy">
+        </button>
+        <div class="product-meta">
+          <span class="category">Condimento</span>
+          <span class="star">Producto estrella</span>
+          <h3>Sazonador Chino</h3>
+          <a class="mini-link" href="https://wa.me/50246403995?text=Hola%20Jhon,%20me%20interesa%20el%20producto%20Sazonador%20Chino" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <button class="product-image" type="button" data-image="assets/marinado-char-siu.png" data-name="Marinado Char Siu" aria-label="Ver ficha de Marinado Char Siu">
+          <img src="assets/marinado-char-siu.png" alt="Ficha comercial de Marinado Char Siu" loading="lazy">
+        </button>
+        <div class="product-meta">
+          <span class="category">Marinado</span>
+          
+          <h3>Marinado Char Siu</h3>
+          <a class="mini-link" href="https://wa.me/50246403995?text=Hola%20Jhon,%20me%20interesa%20el%20producto%20Marinado%20Char%20Siu" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <button class="product-image" type="button" data-image="assets/marinado-carnes.png" data-name="Marinado para Carnes" aria-label="Ver ficha de Marinado para Carnes">
+          <img src="assets/marinado-carnes.png" alt="Ficha comercial de Marinado para Carnes" loading="lazy">
+        </button>
+        <div class="product-meta">
+          <span class="category">Marinado</span>
+          
+          <h3>Marinado para Carnes</h3>
+          <a class="mini-link" href="https://wa.me/50246403995?text=Hola%20Jhon,%20me%20interesa%20el%20producto%20Marinado%20para%20Carnes" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <button class="product-image" type="button" data-image="assets/masa-lomo.png" data-name="Masa de Lomo" aria-label="Ver ficha de Masa de Lomo">
+          <img src="assets/masa-lomo.png" alt="Ficha comercial de Masa de Lomo" loading="lazy">
+        </button>
+        <div class="product-meta">
+          <span class="category">Base para relleno</span>
+          
+          <h3>Masa de Lomo</h3>
+          <a class="mini-link" href="https://wa.me/50246403995?text=Hola%20Jhon,%20me%20interesa%20el%20producto%20Masa%20de%20Lomo" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <button class="product-image" type="button" data-image="assets/masa-camaron.png" data-name="Masa de Camarón" aria-label="Ver ficha de Masa de Camarón">
+          <img src="assets/masa-camaron.png" alt="Ficha comercial de Masa de Camarón" loading="lazy">
+        </button>
+        <div class="product-meta">
+          <span class="category">Base para relleno</span>
+          
+          <h3>Masa de Camarón</h3>
+          <a class="mini-link" href="https://wa.me/50246403995?text=Hola%20Jhon,%20me%20interesa%20el%20producto%20Masa%20de%20Camarón" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <button class="product-image" type="button" data-image="assets/salsa-char-siu.png" data-name="Salsa Char Siu" aria-label="Ver ficha de Salsa Char Siu">
+          <img src="assets/salsa-char-siu.png" alt="Ficha comercial de Salsa Char Siu" loading="lazy">
+        </button>
+        <div class="product-meta">
+          <span class="category">Salsa</span>
+          
+          <h3>Salsa Char Siu</h3>
+          <a class="mini-link" href="https://wa.me/50246403995?text=Hola%20Jhon,%20me%20interesa%20el%20producto%20Salsa%20Char%20Siu" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <button class="product-image" type="button" data-image="assets/salsa-agridulce.png" data-name="Salsa Agridulce" aria-label="Ver ficha de Salsa Agridulce">
+          <img src="assets/salsa-agridulce.png" alt="Ficha comercial de Salsa Agridulce" loading="lazy">
+        </button>
+        <div class="product-meta">
+          <span class="category">Salsa</span>
+          
+          <h3>Salsa Agridulce</h3>
+          <a class="mini-link" href="https://wa.me/50246403995?text=Hola%20Jhon,%20me%20interesa%20el%20producto%20Salsa%20Agridulce" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <button class="product-image" type="button" data-image="assets/salsa-naranja.png" data-name="Salsa a la Naranja" aria-label="Ver ficha de Salsa a la Naranja">
+          <img src="assets/salsa-naranja.png" alt="Ficha comercial de Salsa a la Naranja" loading="lazy">
+        </button>
+        <div class="product-meta">
+          <span class="category">Salsa</span>
+          
+          <h3>Salsa a la Naranja</h3>
+          <a class="mini-link" href="https://wa.me/50246403995?text=Hola%20Jhon,%20me%20interesa%20el%20producto%20Salsa%20a%20la%20Naranja" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <button class="product-image" type="button" data-image="assets/salsa-picante-ajo.png" data-name="Salsa Picante con Ajo" aria-label="Ver ficha de Salsa Picante con Ajo">
+          <img src="assets/salsa-picante-ajo.png" alt="Ficha comercial de Salsa Picante con Ajo" loading="lazy">
+        </button>
+        <div class="product-meta">
+          <span class="category">Salsa</span>
+          
+          <h3>Salsa Picante con Ajo</h3>
+          <a class="mini-link" href="https://wa.me/50246403995?text=Hola%20Jhon,%20me%20interesa%20el%20producto%20Salsa%20Picante%20con%20Ajo" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <button class="product-image" type="button" data-image="assets/empanizador-camarones.png" data-name="Empanizador para Camarones" aria-label="Ver ficha de Empanizador para Camarones">
+          <img src="assets/empanizador-camarones.png" alt="Ficha comercial de Empanizador para Camarones" loading="lazy">
+        </button>
+        <div class="product-meta">
+          <span class="category">Empanizador</span>
+          
+          <h3>Empanizador para Camarones</h3>
+          <a class="mini-link" href="https://wa.me/50246403995?text=Hola%20Jhon,%20me%20interesa%20el%20producto%20Empanizador%20para%20Camarones" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <button class="product-image" type="button" data-image="assets/mantequilla.png" data-name="Mantequilla" aria-label="Ver ficha de Mantequilla">
+          <img src="assets/mantequilla.png" alt="Ficha comercial de Mantequilla" loading="lazy">
+        </button>
+        <div class="product-meta">
+          <span class="category">Preparación</span>
+          
+          <h3>Mantequilla</h3>
+          <a class="mini-link" href="https://wa.me/50246403995?text=Hola%20Jhon,%20me%20interesa%20el%20producto%20Mantequilla" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <button class="product-image" type="button" data-image="assets/mantequilla-ajo.png" data-name="Mantequilla con Ajo" aria-label="Ver ficha de Mantequilla con Ajo">
+          <img src="assets/mantequilla-ajo.png" alt="Ficha comercial de Mantequilla con Ajo" loading="lazy">
+        </button>
+        <div class="product-meta">
+          <span class="category">Preparación</span>
+          
+          <h3>Mantequilla con Ajo</h3>
+          <a class="mini-link" href="https://wa.me/50246403995?text=Hola%20Jhon,%20me%20interesa%20el%20producto%20Mantequilla%20con%20Ajo" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+      </article>
+    
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="marca">
+    <div class="wrap about-grid">
+      <img src="assets/brand.png" alt="Presentación de la marca SAZÓN Base Oriental" loading="lazy">
+      <div>
+        <div class="eyebrow">Nuestra marca</div>
+        <h2>Ingredientes que dan vida a tu cocina.</h2>
+        <p style="color:var(--muted);line-height:1.75;font-size:17px">Una propuesta orientada a cocinas profesionales que necesitan mantener un sabor uniforme, agilizar procesos y trabajar con productos prácticos para el servicio diario.</p>
+        <div class="points">
+          <div class="point"><strong>Consistencia</strong><span>Resultados uniformes para cada preparación.</span></div>
+          <div class="point"><strong>Practicidad</strong><span>Productos pensados para operaciones de restaurante.</span></div>
+          <div class="point"><strong>Variedad</strong><span>Salsas, marinados, bases, mantequillas y condimentos.</span></div>
+          <div class="point"><strong>Atención directa</strong><span>Contacto comercial por WhatsApp con Jhon Reyes.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="catalogo">
+    <div class="wrap">
+      <div class="cta-box">
+        <div class="eyebrow">Catálogo comercial</div>
+        <h2>Conoce toda la línea SAZÓN</h2>
+        <p>Descarga el catálogo completo o escríbenos para conocer disponibilidad, presentaciones y condiciones comerciales.</p>
+        <div class="hero-actions" style="justify-content:center">
+          <a class="gold-btn" href="catalogo-sazon.pdf" target="_blank">Abrir catálogo PDF</a>
+          <a class="ghost-btn" href="https://wa.me/50246403995?text=Hola%20Jhon,%20me%20interesa%20conocer%20la%20línea%20SAZÓN%20Base%20Oriental." target="_blank" rel="noopener">Hablar con Jhon Reyes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <div><strong style="color:var(--gold2)">SAZÓN Base Oriental</strong> · Ingredientes que dan vida a tu cocina.</div>
+    <div>Jhon Reyes · WhatsApp 46403995</div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/50246403995" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">WA</a>
+
+<dialog id="viewer">
+  <div class="dialog-bar"><strong id="viewer-title"></strong><button id="viewer-close" type="button">Cerrar</button></div>
+  <img id="viewer-img" alt="">
+</dialog>
+
+<script>
+  const dialog = document.getElementById('viewer');
+  const viewerImg = document.getElementById('viewer-img');
+  const viewerTitle = document.getElementById('viewer-title');
+  document.querySelectorAll('.product-image').forEach(btn => {
+    btn.addEventListener('click', () => {
+      viewerImg.src = btn.dataset.image;
+      viewerImg.alt = 'Ficha completa de ' + btn.dataset.name;
+      viewerTitle.textContent = btn.dataset.name;
+      dialog.showModal();
+    });
+  });
+  document.getElementById('viewer-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+</script>
+</body>
+</html>
